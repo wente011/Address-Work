@@ -1,0 +1,57 @@
+"","Address.x","IDs","Service Address","Location Name","Organization Name","Address.y","Site ID","Site Name","distance"
+"1","1025 brdway st ne, minneapolis, mn",1,"1025 Broadway St Ne","MN Army Minneapolis Nga","State, Military Affairs, Metro","1025 brdway st ne, minneapolis, mn","4724","NE Minneapolis TACC",0
+"2","1200 minnesota ave s, aitkin, mn",2,"1200 Minnesota Ave S","MN DNR Aitkin- Colo Facil","State, Department of Natural Resources, Region 2, R2 Hill City - R290145","1200 minnesota ave s, aitkin, mn","11201","Forestry Airport Storage R2900308640",0
+"3","1500 co rd b2 w, roseville, mn",6,"1500 County Road B2 W","MN Dot Waters Edge","State, DOT, Metro","1500 co rd b2 w, roseville, mn","11917","SITE, D5E, HEADQUARTERS, ROSEVILLE",0
+"4","1530 maryland ave e, saint paul, mn",8,"1530 Maryland Ave East","MN Army St Paul East Nga","State, Military Affairs, Metro","1530 maryland ave e, saint paul, mn","4738","East St Paul TACC",0
+"5","206 airport rd, saint paul, mn",15,"206 Airport Rd","MN Army St Paul Aasf1","State, Military Affairs, Metro","206 airport rd, saint paul, mn","7042","St Paul AASF",0
+"6","2115 birchmont beach rd ne, bemidji, mn",16,"2115 Birchmont Beach Rd Ne","DNR 2115 Birchmont Beach Rd Ne","State, Department of Natural Resources, Region 1, R1 HQ Bemidji - R290115","2115 birchmont beach rd ne, bemidji, mn","10806","Office - CCM R2900105270",0
+"7","22010 everton ave n, forest lake, mn",17,"22010 Everton Ave N","MN Dot Forest Lake Truck Stati","State, DOT, Metro","22010 everton ave n, forest lake, mn","11922","SITE, D5E, TRUCK STATION, FOREST LAKE",0
+"8","306 power ave n, hinckley, mn",23,"306 Power Ave N","DNR Fish & Wildlife","State, Department of Natural Resources, Region 2, R2 Hinckley - R290090","306 power ave n, hinckley, mn","11102","Garage & Pump House R290303180, 307920",0
+"9","3401 state park rd ne, bemidji, mn",26,"3401 State Park Rd Ne","Lake Bemidji State Park","State, Department of Natural Resources, Region 1, R1 Lake Bemidji State Park - R290035","3401 state park rd ne, bemidji, mn","10756","Contact Station, 4 Cabins & Sanitation",0
+"10","350 maryknoll dr, stillwater, mn",27,"350 Maryknoll Dr North","MN Army Stillwater Readiness C","State, Military Affairs, Metro","350 maryknoll dr, stillwater, mn","14502","Stillwater RC",0
+"11","35365 800th ave, madelia, mn",28,"35365 800Th Ave","Minnesota DNR","State, Department of Natural Resources, Region 4, R4 Madelia WMA - R290183","35365 800th ave, madelia, mn","10163","Office  R2900402410",0
+"12","3636 washington ave n, minneapolis, mn",31,"3636 Washington Ave N","MN Dot Camden Truck Station","State, DOT, Metro","3636 washington ave n, minneapolis, mn","11949","SITE, D5W, TRUCK STATION, (CAMDEN) MINNEAPOLIS",0
+"13","408 e main st, anoka, mn",32,"408 E Main St","MN Army Anoka Nga","State, Military Affairs, Metro","408 e main st, anoka, mn","4756","Anoka TACC",0
+"14","4725 chaska blvd, chaska, mn",35,"4725 Chaska Blvd","MN Dot Chaska Truck Station","State, DOT, Metro","4725 chaska blvd, chaska, mn","11945","SITE, D5W, TRUCK STATION, CHASKA",0
+"15","4761 hamline ave n, arden hills, mn",36,"4761 Hamline Ave N","MN Army Arden Hills Readiness","State, Military Affairs, Metro","4761 hamline ave n, arden hills, mn","11334","AHATS Hamline RC",0
+"16","5351 n shore dr, duluth, mn",38,"5351 N Shore Dr","DNR Hatchery","State, Department of Natural Resources, Region 2, R2 Duluth Area Fisheries - R290295","5351 n shore dr, duluth, mn","10925","Office & Shop R2900200390, 20043 (Heat Only)",0
+"17","7333 bryant lake dr, eden prairie, mn",43,"7333 Bryant Lake Dr","MN Dot Eden Prairie Truck Stat","State, DOT, Metro","7333 bryant lake dr, eden prairie, mn","11946","SITE, D5W, TRUCK STATION, EDEN PRAIRIE",0
+"18","780 hwy 210, carlton, mn",45,"780 Highway 210","Mn DNR Jay Cooke","State, Department of Natural Resources, Region 2, R2 Jay Cooke State Park - R290031","780 hwy 210, carlton, mn","10986","Campground R290031.001",0
+"19","890 pine ave, ortonville, mn",48,"890 Pine Ave","MN DNR Faw Ortonville","State, Department of Natural Resources, Region 4, R4 Ortonville - R290189","890 pine ave, ortonville, mn","13668","Office - Leased R2900405530",0
+"20","9501 hemlock ln n, maple grove, mn",50,"9501 Hemlock Ln","MN Dot Maple Grove Truck Stati","State, DOT, Metro","9501 hemlock ln n, maple grove, mn","13041","SITE, D5W, TRUCK STATION, MAPLE GROVE SUB AREA T7990090992",0
+"21","9501 hemlock ln n, maple grove, mn",51,"9501 Hemlock Ln N","MN Dot Maple Grove Truck Stati","State, DOT, Metro","9501 hemlock ln n, maple grove, mn","13041","SITE, D5W, TRUCK STATION, MAPLE GROVE SUB AREA T7990090992",0
+"22","3300 w 98th st, bloomington, mn",25,"3300 W 98Th St","MN Army Bloomington Nga","State, Military Affairs, Metro","330 w 98th st, bloomington, mn","4719","Bloomington TACC",0.010752688172043
+"23","13865 s robert trl, rosemount, mn",4,"13865 S Robert Trail","MN Army Rosemount Nga","State, Military Affairs, Metro","13865 s robert trail, rosemount, mn","7039","Rosemount TACC",0.019047619047619
+"24","29223 co 28 blvd, frontenac, mn",22,"29223 County 28 Blvd","Frontenac State Park","State, Department of Natural Resources, Region 3, R3 Frontenac State Park - R290021","29224 co 28 blvd, frontenac, mn","10468","Contact Station R2900503750",0.021505376344086
+"25","2315 fernbrook ln n, plymouth, mn",19,"2315 Fernbrook Ln","MN Dot Plymouth Truck Station","State, Department of Public Safety","2455 fernbrook ln n, plymouth, mn","9835","Plymouth DVS Exam Station",0.0404040404040404
+"26","2315 fernbrook ln n, plymouth, mn",20,"2315 Fernbrook Ln N","MN Dot Plymouth Truck Station","State, Department of Public Safety","2455 fernbrook ln n, plymouth, mn","9835","Plymouth DVS Exam Station",0.0404040404040404
+"27","9011 77th st ne, monticello, mn",49,"9011 77Th St Ne","MN Dot Minnesota Rd Research","State, DOT, D10","907 77th st ne, monticello, mn","11739","SITE, D10, LAB, MNROAD RESEARCH",0.0441107403287604
+"28","1341 hwy 96 w, arden hills, mn",3,"1341 W Hwy 96","MN Army Arden Hills Public Works","State, Military Affairs, Metro","1385 hwy 96 w, arden hills, mn","13548","AHATS Building 3",0.0444444444444445
+"29","1912 e 66th st, richfield, mn",13,"1912 E 66Th St","MN Dot Highway Helper Shop","State, DOT, Metro","1900 e 66th st, richfield, mn","11944","SITE, D5W, TRUCK STATION, CEDAR AVENUE",0.045977011494253
+"30","244 maryland ave e, saint paul, mn",21,"244 E Maryland Ave","MN Dot Maryland Ave Truck Stat","State, Department of Administration - FMD","1430 maryland ave e, saint paul, mn","10082","BCA Maryland Bldg & Garage",0.0481792717086835
+"31","951 21st st e, hastings, mn",52,"951 21St St E","MN Dot Hastings Truck Station","State, DOT, Metro","951 e 21st st, hastings, mn","11923","SITE, D5E, TRUCK STATION, HASTINGS",0.0555555555555556
+"32","951 21st st e, hastings, mn",53,"951 E 21St St","MN Dot- Hastings Truck Station","State, DOT, Metro","951 e 21st st, hastings, mn","11923","SITE, D5E, TRUCK STATION, HASTINGS",0.0555555555555556
+"33","4843 hamline ave n, arden hills, mn",37,"4843 Hamline Ave N","MN Army Arden Hills Fms","State, Military Affairs, Metro","4761 hamline ave n, arden hills, mn","11334","AHATS Hamline RC",0.0571428571428573
+"34","4261 hwy 53, eveleth, mn",33,"4261 Hwy 53 S","Iron Range Resources","State, DOT, D1B","2702 hwy 53, eveleth, mn","11799","SITE, D1B, REST AREA, ANCHOR LAKE",0.0833333333333334
+"35","14221 biscayne ave w, rosemount, mn",5,"14221 Biscayne Ave","MN Army Rosemount Fms","State, Military Affairs, Metro","14221 biscayne ave, rosemount, mn","11154","Rosemount FMS",0.0847041847041847
+"36","8180 belden blvd, cottage grove, mn",46,"8180 Belden Blvd","MN Army Cottage Grove Nga","State, Military Affairs, Metro","8180 belden blvd s, cottage grove, mn","4714","Cottage Grove TACC",0.0942084942084942
+"37","7625 golden triangle dr ste f, eden prairie, mn",44,"7625 Golden Triangle Dr Ste F","Metro Resources Technology Par","State, Department of Human Services, DHS - Leased","7625 golden triangle dr, eden prairie, mn","16092","Eden Prairie - 7625 Golden Metro Res Tech Park - Voc Svcs",0.103528801245459
+"38","1779 mcmenemy st, maplewood, mn",10,"1779 Mcmenemy Rd","MN Dot Maplewood Truck Station","State, DOT, Metro","1779 mcmenemy, maplewood, mn","11926","SITE, D5E, TRUCK STATION, MAPLEWOOD",0.103686635944701
+"39","3601 7th ave, anoka, mn",29,"3601 7Th Ave","MN Dot Anoka Truck Station","State, DOT, Metro","3601 7th ave n, anoka, mn","11943","SITE, D5W, TRUCK STATION, ANOKA",0.106376811594203
+"40","3601 7th ave, anoka, mn",30,"3601 7Th Ave N","MN Dot Anoka Truck Station","State, DOT, Metro","3601 7th ave n, anoka, mn","11943","SITE, D5W, TRUCK STATION, ANOKA",0.106376811594203
+"41","20596 hwy 7 w, hutchinson, mn",14,"20596 Highway 7 W","MN DNR Hutchinson","State, Department of Natural Resources, Region 4, R4 Hutchinson - R290127","20596 hwy 7, hutchinson, mn","10134","Office R2900401810",0.109408258833546
+"42","1900 co rd i, arden hills, mn",12,"1900 Co Rd I","MN Dot Arden Hills","State, DOT, D10","1900 w co rd i, arden hills, mn","11742","SITE, D10, TRAINING CENTER, ARDEN HILLS TC",0.1421950315165
+"43","hwy 10 nw, elk river, mn",56,"Hwy 10 Nw","MN Dot Dayton Port Rest Area","State, DOT, Metro","hwy 10, elk river, mn","11953","SITE, D5W, WEIGH SCALE, DAYTONPORT",0.14484126984127
+"44","454 hwy 169, hill city, mn",34,"454 Us-169","MN DNR Hill City Forestry","State, Department of Natural Resources, Region 2, R2 Hill City - R290145","454 n hwy 169, hill city, mn","10968","Office, Shop, Oil House & cold Storage R2900303840, 30385, 30397, 30399",0.145604395604396
+"45","5500 85th ave n, brooklyn park, mn",39,"5500 85Th Ave N","MN Army Brooklyn Park Nga","State, Military Affairs, Metro","5500   85th ave n, brooklyn park, mn","4726","Brooklyn Park TACC",0.150871459694989
+"46","2229 pilot knob rd, saint paul, mn",18,"2229 Pilot Knob Rd","MN Dot- Medota Truck Station","State, DOT, Metro","2229 pilot knob rd, mendota heights, mn","11928","SITE, D5E, TRUCK STATION, MENDOTA HEIGHTS",0.166138763197587
+"47","614 militia dr, minneapolis, mn",42,"614 Militia Dr","MN Ang 133Rd Aw-Bldg 610","State, Military Affairs, Metro","612 militia dr, saint paul, mn","12082","Civil Support Team",0.16673835125448
+"48","18071 co rd 30, crosby, mn",11,"18071 County Road 30","Portsmouth Campground","State, Department of Natural Resources, Region 1, R1 La Salle Lake SRA R290322","10221 co rd 9, solway, mn","12314","3 Pedestals, Lone Wolf Cabin & Black Bear Garage",0.187287449392713
+"49","1530 hwy 10, spring lake, mn",7,"1530 Hwy 10","MN Dot Spring Lake Park Truck","State, DOT, D8","5530 hwy 67, granite falls, mn","12056","SITE, D8A, TRUCK STATION, GRANITE FALLS",0.188026224982747
+"50","17340 17796 greer lake rd, crosby, mn",9,"17340-17796 Greer Lake Rd","Greer Lake State Forest Campground",NA,NA,NA,NA,NA
+"51","31700 birch lake rd, melrose, mn",24,"31700 Birch Lake Rd","MN DNR Birch Lake Forest",NA,NA,NA,NA,NA
+"52","6008 washington blvd, forest lake, mn",41,"6008 Washington Blvd","MN Dot Forest Lake Rest Area",NA,NA,NA,NA,NA
+"53","8655 i 94, maple grove, mn",47,"8655 I-94","MN Dot Elm Creek Rest Area",NA,NA,NA,NA,NA
+"54","cty rd 19, deer river, mn",54,"Cty Rd 19","DNR Moose Lake Fra",NA,NA,NA,NA,NA
+"55","haylake campground, jacobson, mn",55,"Haylake Campground","Haylake Campground",NA,NA,NA,NA,NA
+"56","snake river camground dr, pine city, mn",57,"Snake River Camground Dr","MN DNR Snake River Campground",NA,NA,NA,NA,NA
