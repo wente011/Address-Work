@@ -107,7 +107,7 @@ chck[chck$distance> 0.07 | is.na(chck$distance),]<- editData(data=chck[chck$dist
 #write.csv(chck,"qaqc.csv")
 chck2<-read_csv("qaqc.csv")
 ens.keyed<-ens
-ens.keyed$`Site ID`<-chck$`Site ID`[match(ens$`Service Address`,chck2$`Service Address`)]
+ens.keyed$`Site ID`<-chck2$`Site ID`[match(ens$`Service Address`,chck2$`Service Address`)]
 
 ########################################### Check if there are new sites not already keyed ###############################################################
 ens.keyed[is.na(ens.keyed$`Site ID`),]  #OK, just city of new hope. 
@@ -156,6 +156,7 @@ ens.keyed3$`Street Address:`<-b3b$Address[mf]
 ens.keyed3$`City:`<-b3b$City[mf]
 ens.keyed3$`Zip Code:`<-b3b$Zip[mf]
 ens.keyed3$`Agency Name`<-b3b$`Agency Name`[mf]
+ens.keyed3$`Location Name`<-ens.keyed$`Location Name`[match(ens.keyed$`Site ID`,ens.keyed3$`Facility ID`)]
 
 
 ############################### Write resutlts to a "ready to upload" excel file. ##############################################
