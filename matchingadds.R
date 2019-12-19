@@ -6,7 +6,6 @@ library(lubridate)
 library(tidyverse)
 library(magrittr)
 #devtools::install_github("moodymudskipper/safejoin")
-library(stringr)
 library(stringi)
 library(stringdist)
 library(ggmap)
@@ -14,7 +13,7 @@ library(shiny)
 library(editData)
 library(openxlsx)
 library(fuzzyjoin)
-library(safejoin)
+#library(safejoin)
 #devtools::install_github("hansthompson/rusps")
 library(rusps)
 library(XML)
@@ -25,14 +24,14 @@ library(XML)
 
 
 # using the jaro-winkler string distance, must have an address vector called "Address" 
-addJoin <- function(x,b3,threshold){
+addJoin <- function(x,b3,threshold,method){
   joined <- 
     stringdist_left_join(x,
                          b3, 
                          by = "Address",
                          distance_col = "distance",
                          max_dist = threshold,
-                         method = "jw"
+                         method = method
     )
 }
 
@@ -53,14 +52,9 @@ add_clean<-function(char){
 ########################################### Data Load (add files as needed) #####################################################################
 
 b3a<-read_excel("all_addresses.xlsx")
-ens<-read_csv("waste2.csv") %>% mutate(Zip2=stri_split_fixed(ens$ZIP,"-",simplify = T)[,1]) %>% mutate(IDs=seq(1:length(`Loc ID`)))
+ens<-read_csv("waste2.csv") %>% mutate(Zip2=stri_split_fixed(ZIP,"-",simplify = T)[,1]) %>% mutate(IDs=seq(1:length(`Loc ID`)))
 srt<-read_excel("solidwastetemplate2019.xlsx")
 ens.key<-read.csv("ens.key.csv") %>% select(`Serivce Address`="Service.Address",`Site ID`="Site.ID")
-ens.keyed<-ens
-ens.keyed$`Site ID`<-ens.key$`Site ID`[match(ens$`Service Address`,ens.key$`Serivce Address`)]
-
-########################################### Check if there are new sites #####################################################################
-ens.keyed[is.na(ens.keyed$`Site ID`),]  #OK, just city of new hope. 
 
 
 ########################################### Cleaning and Validating #########################################################
@@ -98,18 +92,25 @@ ensads2$Address %<>% add_clean()   #There are 57 distinct service addresses curr
 
 ########################################### Joining (EDIT WITH NEW SITES) #####################################################################
 
+results<-addJoin(x=ensads2,b3=b3a,threshold=0.20,method="cosine") %>% 
+            mutate_at(c("Address.x","Address.y","Service Address","Site Name"),as.factor) %>% 
+               group_by(`Site ID`) %>% filter(distance==min(distance)) %>% ungroup() %>% arrange(distance) %>% filter(!duplicated(`Service Address`))
 
-results<-addJoin(x=ensads2,b3=b3a,threshold=0.20) %>% arrange(distance) %>% mutate_at(c("Address.x","Address.y","Service Address","Site Name"),as.factor)
-chck<-results %>% group_by(`IDs`,`Site Name`,`Address.x`,`Address.y`,`Service Address`,`Site ID`,`Location Name`,`Organization Name`) %>% summarize_at("distance",min) %>% arrange(distance)
-chck<-chck[!duplicated(chck$`Service Address`),]
-chck2<-results[results$IDs %!in% chck$IDs & !duplicated(results$`Service Address`),] %>% bind_rows(.,chck) %>% filter(`Location Name`!="City Of New Hope-Public Works")
-write.csv(chck2,"qaqc.csv")
 
 #Ok, this seems to work pretty well! It grabs the data pretty well. The next function opens a shiny app to direct enter the SITE IDs. 
-chck2[is.na(chck2$`Site ID`),]<-editData(data=chck2[is.na(chck2$`Site ID`),])
-#ens.key<-chck2 %>% select(`Service Address`,`Site ID`), 
-#write.csv(ens_key,"ens.key.csv")    #this is to create a file 
+chck<- ensads2[ensads2$`Service Address` %!in% results$`Service Address`,] %>% bind_rows(results)
 
+
+########################################### Clean the results as needed #####################################################################
+chck[chck$distance> 0.07 | is.na(chck$distance),]<- editData(data=chck[chck$distance> 0.07 | is.na(chck$distance),])
+
+#write.csv(chck,"qaqc.csv")
+chck2<-read_csv("qaqc.csv")
+ens.keyed<-ens
+ens.keyed$`Site ID`<-chck$`Site ID`[match(ens$`Service Address`,chck2$`Service Address`)]
+
+########################################### Check if there are new sites not already keyed ###############################################################
+ens.keyed[is.na(ens.keyed$`Site ID`),]  #OK, just city of new hope. 
 
 
 ####################################### RESULTS USING THE KEYED DATASET #############################################################
@@ -149,7 +150,7 @@ ens.keyed3<-bind_rows(ens.keyed2.2,srt2) %>% mutate(rowid=NULL) %>% rowid_to_col
 
 ##### Getting the additional missing fields into the finalized dataframe. 
 mf<-match(ens.keyed3$`Facility ID`,b3a$`Site ID`)
-ens.keyed3[is.na(ens.keyed3)]<-""
+#ens.keyed3[is.na(ens.keyed3)]<-""
 ens.keyed3$Member<-b3b$`Site Name`[mf]
 ens.keyed3$`Street Address:`<-b3b$Address[mf]
 ens.keyed3$`City:`<-b3b$City[mf]
@@ -159,3 +160,4 @@ ens.keyed3$`Agency Name`<-b3b$`Agency Name`[mf]
 
 ############################### Write resutlts to a "ready to upload" excel file. ##############################################
 openxlsx::write.xlsx(ens.keyed3,"results.xlsx") 
+
