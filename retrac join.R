@@ -2,7 +2,6 @@ library(readxl)
 library(lubridate)
 library(tidyverse)
 library(magrittr)
-library(stringr)
 library(stringi)
 library(safejoin)
 library(stringdist)
@@ -48,8 +47,7 @@ add_clean<-function(char){
 
 
 b3a<-read_excel("all_addresses.xlsx")
-rtr<-file.choose() 
-rtr<-read_excel(path=rtr)
+rtr<-read_csv(file.choose())
 srt<-read_excel("solidwastetemplate2019.xlsx")
 srt2<-srt[c(0),] %>% mutate_all(as.character)
 
@@ -71,7 +69,7 @@ qaqc<-rtr %>% summarize_at(c("Trash (lbs)","Recycling (lbs)","Organics (lbs)"),s
 qaqc
 
 ensads<-rtr[!duplicated(rtr$Member),]
-
+ensads$IDs<-seq(1,length(ensads$Member))
 test<-list()
 for(i in 1:length(ensads$Member)){
   test[[i]]<-validate_address_usps(username='230STATE3781',city=ensads$`City:`[i],street=ensads$`Street Address:`[i],state="MN")
@@ -79,7 +77,9 @@ for(i in 1:length(ensads$Member)){
   test[[i]]<-test[[i]][1,]
   
 }
-test<-bind_rows(test, .id = "column_label") %>% mutate_all(unlist)
+
+
+test<-bind_rows(test, .id = "column_label") %>% select(everything(),-Zip4) %>% mutate_all(unlist)
 test2<-left_join(test,ensads,by="IDs")
 test2$City.x<-ifelse(is.na(test2$City.x),test2$City.y,test2$City.x)
 test2$Address2.x<-ifelse(is.na(test2$Address2.x),test2$Address,test2$Address2.x)
@@ -90,24 +90,22 @@ ensads2$`Location Name`<-ens$`Location Name`[match(ensads2$`Service Address`,ens
 
 
 
-
 ##############################  Fixing ERRORS ############################################################
 
-rtrjoin<-addJoin(rtr,b3a,0.10) %>% 
-  group_by(`Site ID`) %>% filter(distance==min(distance)) %>% ungroup() %>% arrange(distance) %>% filter(!duplicated(`Site ID`))  #should be a perfect match. 
+rtrjoin<-addJoin(rtr,b3a,0.30) %>% 
+  group_by(`Site ID`) %>% filter(distance==min(distance)) %>% ungroup() %>% arrange(distance) %>% filter(!duplicated(`Member`))  #should be a perfect match. 
 #rtr2[is.na(rtr2)]<-""
+rtrjoin$Agency<-b3b$`Agency Name`[match(rtrjoin$`Site ID`,b3b$`Site ID`)]
+#write.csv(rtrjoin,"qaqc.csv")
 
-rtrjoin$B3.Agency<-b3b$Agency1[match(rtrjoin$`Site ID`,b3b$`Site ID`)]
-rtrjoin %>% select(Address.x,Address.y,`Site Name`,`Site ID`,distance,B3.Agency,everything()) %>% openxlsx::write.xlsx(.,"fix.errors.xlsx")
+
 
 
 
 corrs<-read_excel(file.choose())
 
 rtrjoin$`Site ID`[match(rtrjoin$Member,corrs$Member)]<-corrs$`Site ID`[match(rtrjoin$Member,corrs$Member)]
-
-
-rtr2$`Site ID`[match(rtr2$Member,corrs$Member)]<-corrs$`Site ID`[match(corrs$Member,rtr2$Member)]
+rtr2<- rtr %>% left_join(.,corrs)
 
 ############################## After fixing ERRORS ############################################################
 
@@ -131,8 +129,8 @@ rtr2[is.na(rtr2)]<-""
 rtr2 %>% summarize_at(c("Trash (lbs)","Recycling (lbs)","Organics (lbs)"),function(x) sum(as.numeric(x),na.rm = T)) %>% mutate(diversion.rate=(`Organics (lbs)` + `Recycling (lbs)`)/(`Organics (lbs)` + `Recycling (lbs)` + `Trash (lbs)`))  
   
 
-
-rtr2 %>% mutate_at("Recycling (lbs)",function(x) x<-0) %>% openxlsx::write.xlsx(.,"retrac2srtupload.xlsx")
+rtr2 %>% mutate_at("Recycling (lbs)",function(x) x<-0)
+write.csv(rtr2,"retrac2srtupload.csv")
 
 
 

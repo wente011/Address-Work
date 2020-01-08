@@ -1,17 +1,23 @@
 library(readxl)
 library(shiny)
+library(gsheet)
 library(readxl)
 library(lubridate)
 library(tidyverse)
 library(magrittr)
 library(stringr)
 library(stringi)
-library(safejoin)
 library(stringdist)
 library(fuzzyjoin)
 #devtools::install_github("hansthompson/rusps")
 library(rusps)
 library(XML)
+adds<-gsheet2tbl('https://docs.google.com/spreadsheets/d/1PDCV4RTxFS7JLlSqyonzzPpVjl0I0-RiAodQo43YtKY/edit?usp=sharing')
+srt<-gsheet2tbl('https://docs.google.com/spreadsheets/d/13cqB6Bi73jdGmX1qqisGA-yjEX6b59uYqLPwrO_HK8Q/edit?usp=sharing')
+
+
+
+
 
 '%!in%' <- function(x,y)!('%in%'(x,y))  #I always like to create my own "opposite of %in%" for nice logicals.
 
@@ -96,6 +102,12 @@ runApp(list(
       if (!is.null(input$text2))
         dat$`Contact name:`<<- input$text2
 ################################################## Script Goes here  #############################################
+      
+      
+      
+      
+      
+      
       
       
       
